@@ -1,0 +1,72 @@
+html, * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #FDFFEB;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 4rem;
+}
+
+
+.register {
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > label {
+            display: flex;
+            width: 100%;
+            margin: 0.5rem 0;
+            justify-content: center;
+
+            & > p {
+                width: 10rem;
+            }
+            & > input, textarea {
+                flex-grow: 1;
+            }
+            & > input[type='checkbox'] {
+                flex-grow: 0;
+                margin: 0 1rem;
+            }
+            & > input[type='checkbox'] ~ p {
+                width: auto;
+            }
+        }
+
+        & > button {
+            font-size: xx-large;
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    &__table {
+        border-collapse: collapse;
+        & > * > tr > *{
+                padding: 0.5rem;
+                border: 1px solid #C1CE92;
+        }
+    }
+}
+
+hr {
+    border: 1px dashed #AAA;
+    margin: 1rem 0;
+}
+
+h1, h2 {
+    width: 100%;
+    margin: 2rem 0;
+    text-align: center;
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: x-large;
+}

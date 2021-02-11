@@ -1,0 +1,57 @@
+<%- include('header') -%>
+<main>
+    <form method='post' action='/' class='register__form'>
+        <label>
+            <p>Nafn*</p>
+            <input type='text' name='name'>
+        </label>
+        <label>
+            <p>Kennitala*</p>
+            <input type='text' name='social_id'>
+        </label>
+        <label>
+            <p>Athugasemd:</p>
+            <textarea name='comment'></textarea>
+        </label>
+        <label>
+            <input type='checkbox' name='anonymous'>
+            <p>Ekki birta nafn á lista</p>
+        </label>
+        <% if(errors){ %>
+            <% if(errors.length == 1){ %>
+            <h3>Villa við undirskrift:</p>
+            <% } else { %>
+            <h3>Villur við undirskrift:</p>
+            <% } %>
+        <ul>
+        <% errors.forEach(error => { %>
+            <li><%= error %></li>
+        <% }); %>
+        </ul>
+        <% } %>
+        <button>Skrifa undir</button>
+    </form>
+
+    <hr>
+
+    <h2>Undirskriftir</h2>
+    <table class='register__table'>
+        <tr>
+            <th>Dags</th>
+            <th>Nafn</th>
+            <th>Athugasemd</th>
+        </tr>
+        <% data.forEach(row => { %>
+            <tr>
+                <td><%= timeformat(row.signed)%></td>
+                <% if(row.anonymous) { %>
+                <td>*****</td>
+                <% } else { %>
+                <td><%= row.name%></td>
+                <% } %>
+                <td><%= row.comment%></td>
+            </tr>
+        <% }); %> 
+    </table>
+</main>
+<%- include('footer') -%> 
