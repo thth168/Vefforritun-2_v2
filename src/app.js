@@ -8,9 +8,7 @@ import router from './registration.js';
 
 dotenv.config();
 
-const {
-  PORT: port = 3000,
-} = process.env;
+const port = process.env.PORT || 3000;
 const appPath = dirname(fileURLToPath(import.meta.url));
 const app = express();
 
