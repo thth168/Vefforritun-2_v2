@@ -48,6 +48,7 @@ body {
 
     &__table {
         border-collapse: collapse;
+        width: 100%;
         & > * > tr > *{
                 padding: 0.5rem;
                 border: 1px solid #C1CE92;
